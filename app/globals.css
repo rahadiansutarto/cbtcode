@@ -1,26 +1,396 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  @apply box-border m-0 p-0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply leading-[1.6] text-[#1a1a1a] bg-[#171929] font-sans;
+}
+
+/* Header */
+.header {
+  @apply fixed backdrop-blur-[10px] z-[1000] px-0 py-4 border-b-[#171929] border-b border-solid top-0 inset-x-0;
+  background: #171929;
+}
+.nav-container {
+  @apply max-w-[1200px] flex justify-between items-center mx-auto my-0 px-8 py-0;
+}
+.logo {
+  @apply text-2xl font-bold text-[white] no-underline;
+}
+.nav-menu {
+  @apply flex gap-8;
+  list-style: none;
+}
+.nav-menu a {
+  @apply text-[white] no-underline font-medium transition-[color] duration-[0.3s] ease-[ease] hover:text-[#1a1a1a];
+}
+.cta-button {
+  @apply text-[white] no-underline font-semibold transition-all duration-[0.3s] ease-[ease] flex items-center gap-2 px-6 py-3 rounded-lg hover:-translate-y-px;
+  background: #833ab4;
+  background: linear-gradient(
+    45deg,
+    rgba(131, 58, 180, 1) 43%,
+    rgba(253, 29, 29, 1) 100%
+  );
+}
+.cta-button:hover {
+  background: #833ab4;
+  background: linear-gradient(
+    193deg,
+    rgba(131, 58, 180, 1) 11%,
+    rgba(253, 29, 29, 1) 62%,
+    rgba(253, 246, 29, 1) 95%
+  );
+}
+
+/* Hero Section */
+/* .hero {
+  @apply text-center px-16 py-32;
+  background: #b5b5b5;
+  background: linear-gradient(
+    180deg,
+    rgba(181, 181, 181, 1) 30%,
+    rgba(0, 0, 0, 1) 98%
+  );
+} */
+.hero {
+  background: linear-gradient(180deg, #b5b5b5 30%, #000 98%);
+  @apply text-center px-16 py-32;
+}
+
+.hero-container {
+  @apply max-w-[1200px] mx-auto my-0 px-8 py-0;
+}
+/* .hero h1 {
+  @apply text-[2rem] font-bold bg-clip-text mb-4;
+  background: linear-gradient(135deg, #1a1a1a 0%, #4e4c4c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
+.hero h1 {
+  background: linear-gradient(135deg, #1a1a1a, #4e4c4c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+}
+.hero-subtitle {
+  @apply text-[3.5rem] text-[#444444] max-w-[1200px] mb-8 mx-auto;
+}
+.hero-description {
+  @apply text-[1.1rem] text-[#c6c7c9] max-w-[500px] mb-12 mx-auto;
+}
+.hero-cta {
+  @apply inline-flex items-center gap-2 text-[white] no-underline font-semibold text-[1.1rem] transition-all duration-[0.5s] ease-[ease] px-8 py-4 rounded-xl hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)];
+  background: #833ab4;
+  background: linear-gradient(
+    45deg,
+    rgba(131, 58, 180, 1) 43%,
+    rgba(253, 29, 29, 1) 100%
+
+  );
+}
+.hero-cta:hover {
+  background: #833ab4;
+  background: linear-gradient(
+    193deg,
+    rgba(131, 58, 180, 1) 11%,
+    rgba(253, 29, 29, 1) 62%,
+    rgba(253, 246, 29, 1) 95%
+  );
+}
+
+/* Partners Section */
+.partners {
+  @apply px-0 py-16;
+  background: #000000;
+}
+.partners-container {
+  @apply max-w-[1200px] text-center mx-auto my-0 px-8 py-0;
+}
+.partners h2 {
+  @apply text-2xl font-semibold text-[#fdfdfd] mb-12;
+}
+.partners-grid {
+  @apply grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-8 items-center text-[white];
+}
+.partner-logo {
+  @apply h-[60px] w-auto opacity-60 transition-opacity duration-[0.3s] ease-[ease] grayscale hover:opacity-100 hover:grayscale-[0%];
+}
+
+/* Testimonials */
+.testimonials {
+  @apply px-0 py-16;
+  background: black;
+}
+.testimonials-container {
+  @apply max-w-[1200px] text-[white] mx-auto my-0 px-8 py-0;
+}
+.testimonials-grid {
+  @apply grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-10;
+}
+.testimonial {
+  @apply shadow-[0_4px_6px_rgba(0,0,0,0.05)] border border-neutral-200 p-8 rounded-xl border-solid;
+  background: #121111;
+  background: linear-gradient(
+    134deg,
+    rgba(18, 17, 17, 0.98) 2%,
+    rgb(127, 25, 167) 17%,
+    rgba(190, 29, 253, 0.48) 48%,
+    rgba(72, 11, 96, 1) 87%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+.testimonial-text {
+  @apply text-[1.1rem] text-[#cecece] italic mb-6;
+}
+.testimonial-author {
+  @apply font-semibold text-[#e0e0e0] mb-1;
+}
+.testimonial-company {
+  @apply text-[#cacaca] text-[0.9rem];
+}
+
+/* Hubs Section */
+.hubs {
+  @apply px-0 py-16;
+  background: #000000;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(26, 26, 26, 1) 79%
+  );
+}
+.hubs-container {
+  @apply max-w-[1200px] text-center mx-auto my-0 px-8 py-0;
+}
+.hubs h2 {
+  @apply text-[2rem] font-bold text-white mb-12;
+}
+.hubs-grid {
+  @apply grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8;
+}
+.hub {
+  @apply border-neutral-200 transition-all duration-[0.3s] ease-[ease] p-8 rounded-xl border-2 border-solid hover:-translate-y-0.5 hover:border-[#7f19a7];
+}
+.hub-name {
+  @apply text-xl font-semibold text-white;
+}
+
+/* Footer */
+.footer {
+  @apply text-[white] pt-12 pb-8 px-0;
+  background: #1a1a1a;
+}
+.footer-container {
+  @apply max-w-[1200px] mx-auto my-0 px-8 py-0;
+}
+.footer-content {
+  @apply grid grid-cols-[1fr_auto] gap-8 items-center mb-8;
+}
+.footer-logo {
+  @apply text-2xl font-bold;
+}
+.footer-cta {
+  @apply inline-flex items-center gap-2 text-[white] no-underline font-semibold transition-all duration-[0.3s] ease-[ease] px-6 py-3 rounded-lg hover:-translate-y-px;
+  background: #833ab4;
+  background: linear-gradient(
+    45deg,
+    rgba(131, 58, 180, 1) 43%,
+    rgba(253, 29, 29, 1) 100%
+  );
+}
+.footer-cta:hover {
+  background: #833ab4;
+  background: linear-gradient(
+    193deg,
+    rgba(131, 58, 180, 1) 11%,
+    rgba(253, 29, 29, 1) 62%,
+    rgba(253, 246, 29, 1) 95%
+  );
+}
+.certifications {
+  @apply flex gap-8 mb-8;
+}
+.cert {
+  @apply flex items-center gap-2 text-[0.9rem] text-[#ccc];
+}
+.cert-icon {
+  @apply w-4 h-4 rounded-[50%];
+  background: #4ade80;
+}
+.footer-bottom {
+  @apply text-center text-[#999] text-[0.9rem] pt-4 border-t-[#333] border-t border-solid;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    @apply hidden;
+  }
+  .hero h1 {
+    @apply text-[2rem];
+  }
+  .hero-subtitle {
+    @apply text-[6rem];
+  }
+  .testimonials-grid {
+    @apply grid-cols-[1fr];
+  }
+  .footer-content {
+    @apply grid-cols-[1fr] text-center;
+  }
+  .certifications {
+    @apply justify-center flex-wrap;
+  }
+
+
+
+}
+
+.partners .hero-cta { margin-top: 2rem; }
+
+.hubs .hero-cta { margin-top: 3rem; }
+
+/* Modal */
+/* .modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+.modal {
+  width: 100%;
+  max-width: 560px;
+  background: #0f0f12;
+  border: 1px solid #2a2a2e;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #2a2a2e;
+}
+.modal-header h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.modal-close {
+  background: transparent;
+  border: none;
+  color: #bbb;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.modal-body {
+  padding: 1rem 1.25rem 1.25rem;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-bottom: 0.875rem;
+}
+.form-field label {
+  color: #ddd;
+  font-size: 0.9rem;
+}
+.form-field input,
+.form-field textarea {
+  background: #15161c;
+  border: 1px solid #2a2a2e;
+  color: #f3f3f3;
+  border-radius: 8px;
+  padding: 0.625rem 0.75rem;
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #7f19a7;
+  box-shadow: 0 0 0 3px rgba(127,25,167,0.25);
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.btn-secondary,
+.btn-primary {
+  padding: 0.625rem 1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-secondary {
+  background: #1e1f26;
+  color: #ddd;
+  border-color: #2a2a2e;
+}
+.btn-secondary:hover {
+  background: #242633;
+}
+.btn-primary {
+  background: linear-gradient(45deg, rgba(131, 58, 180, 1) 43%, rgb(238, 59, 59) 100%);
+  color: #fff;
+}
+.btn-primary:hover {
+  filter: brightness(1.05);
+} */
+ .modal-overlay {
+  @apply fixed inset-0 z-[10000] flex items-center justify-center bg-black/60;
+}
+
+.modal {
+  @apply w-full max-w-[560px] rounded-xl border border-[#2a2a2e] bg-[#0f0f12] shadow-[0_20px_60px_rgba(0,0,0,0.4)];
+}
+
+.modal-header {
+  @apply flex items-center justify-between px-5 py-4 border-b border-[#2a2a2e];
+}
+
+.modal-header h3 {
+  @apply text-2xl font-bold text-white;
+}
+
+.modal-close {
+  @apply text-[#bbb] text-2xl cursor-pointer bg-transparent border-none;
+}
+
+.modal-body {
+  @apply px-5 py-4;
+}
+
+.form-field {
+  @apply flex flex-col gap-1.5 mb-3;
+}
+
+.form-field label {
+  @apply text-sm text-[#ddd];
+}
+
+.form-field input,
+.form-field textarea {
+  @apply rounded-lg border border-[#2a2a2e] bg-[#15161c] px-3 py-2 text-white focus:outline-none focus:border-[#7f19a7] focus:ring-2 focus:ring-[#7f19a7]/25;
+}
+
+.modal-actions {
+  @apply flex justify-end gap-3 mt-2;
+}
+
+.btn-secondary {
+  @apply rounded-lg border border-[#2a2a2e] bg-[#1e1f26] px-4 py-2 text-[#ddd] hover:bg-[#242633];
+}
+
+.btn-primary {
+  @apply rounded-lg bg-gradient-to-r from-[#833ab4] to-[#ee3b3b] px-4 py-2 text-white font-semibold hover:brightness-105;
 }
