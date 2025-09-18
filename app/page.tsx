@@ -1,8 +1,9 @@
+import Link from "next/link";
 export default function Home() {
   return (
     <>
       {/* Header */}
-      <header className="header">
+{/*       <header className="header">
     <div className="nav-container">
       <a href="/" className="logo">
         CalvinBall Technologies
@@ -31,6 +32,35 @@ export default function Home() {
         <span>→</span>
       </a>
     </div>
+      </header> */}
+        <header className="header">
+        <div className="nav-container">
+          <Link href="/" className="logo">
+            CalvinBall Technologies
+          </Link>
+          <nav>
+            <ul className="nav-menu">
+              <li>
+                <Link href="/">Overview</Link>
+              </li>
+              <li>
+                <a href="#product">Product</a>
+              </li>
+              <li>
+                <a href="#team">Team</a>
+              </li>
+              <li>
+                <a href="#experts">Experts</a>
+              </li>
+              <li>
+                <Link href="/careers">Career</Link>
+              </li>
+            </ul>
+          </nav>
+          <a href="#waitlist" className="cta-button">
+            Join The Waitlist <span>→</span>
+          </a>
+        </div>
       </header>
       {/* Hero Section */}
       <section className="hero">
