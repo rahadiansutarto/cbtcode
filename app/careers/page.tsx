@@ -30,7 +30,10 @@ export default function CareersPage() {
               <li><Link href="/careers">Career</Link></li>
             </ul>
           </nav>
-          <a href="#waitlist" className="cta-button">Join The Waitlist <span>→</span></a>
+          <Link href="#waitlist" className="footer-cta">
+           Join The Waitlist
+          <span>→</span>
+        </Link>
         </div>
       </header>
       <main>
@@ -65,7 +68,7 @@ export default function CareersPage() {
                */}
             </div>
             <div className="text-center">
-              <a className="hero-cta mt-8" href="#" onClick={(e) => { e.preventDefault(); openModal(null); }}>Apply Now <span>→</span></a>
+              <button className="hero-cta mt-8" onClick={(e) => {e.preventDefault(); openModal(null);}}> Apply Now <span>→</span></button>
             </div>
             {/* <div className="text-center">
               <a className="hero-cta" href="id">Details <span>→</span></a>
@@ -82,7 +85,7 @@ export default function CareersPage() {
               <div className="hub"><div className="hub-name">Bali</div></div>
             </div>
             <div>
-              <a className="hero-cta" href="mailto:careers@calvinballtech.com">Send Your Resume <span>→</span></a>
+              <Link href="mailto:careers@calvinballtech.com">Send Your Resume →</Link>
             </div>
           </div>
         </section>
@@ -125,7 +128,10 @@ export default function CareersPage() {
         <div className="footer-container">
           <div className="footer-content">
             <div className="footer-logo">CalvinBall Technologies</div>
-            <a href="#waitlist" className="footer-cta">Join The Waitlist <span>→</span></a>
+              <Link href="#waitlist" className="footer-cta">
+                Join The Waitlist
+                <span>→</span>
+              </Link>
           </div>
           <div className="certifications">
             <div className="cert"><div className="cert-icon" /><span>ISO Certified</span></div>
