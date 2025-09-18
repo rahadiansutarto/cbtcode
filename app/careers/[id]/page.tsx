@@ -16,9 +16,12 @@ export default function JobPage({ params }: JobPageProps) {
       <h1 className="text-5xl font-bold mb-6 text-white text-center">{job.title}</h1>
       <p className="text-lg text-neutral-300 mb-12">{job.description}</p>
 
-      <a href="/careers" className="inline-block px-6 py-3 bg-gradient-to-tr from-[#833ab4] to-[#fd1d1d] text-white rounded-lg hover:-translate-y-0.5 transition">
+{/*       <a href="/careers" className="inline-block px-6 py-3 bg-gradient-to-tr from-[#833ab4] to-[#fd1d1d] text-white rounded-lg hover:-translate-y-0.5 transition">
         Return to Apply Now →
-      </a>
+      </a> */}
+      <Link href={"/careers"} className="inline-block px-6 py-3 bg-gradient-to-tr from-[#833ab4] to-[#fd1d1d] text-white rounded-lg hover:-translate-y-0.5 transition">
+        Return to Apply Now →
+      </Link>
     </main>
   );
 }
