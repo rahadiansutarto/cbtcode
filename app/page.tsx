@@ -43,7 +43,7 @@ export default function Home() {
               <li>
                 <Link href="/">Overview</Link>
               </li>
-              <li>
+{/*               <li>
                 <a href="#product">Product</a>
               </li>
               <li>
@@ -51,15 +51,19 @@ export default function Home() {
               </li>
               <li>
                 <a href="#experts">Experts</a>
-              </li>
+              </li> */}
               <li>
                 <Link href="/careers">Career</Link>
               </li>
             </ul>
           </nav>
-          <a href="#waitlist" className="cta-button">
+{/*           <a href="#waitlist" className="cta-button">
             Join The Waitlist <span>→</span>
-          </a>
+          </a> */}
+          <Link href="#waitlist" className="footer-cta">
+           Join The Waitlist
+          <span>→</span>
+          </Link>
         </div>
       </header>
       {/* Hero Section */}
@@ -70,10 +74,10 @@ export default function Home() {
       <p className="hero-description">
         Built by Industry Experts. Engineered for Business Results.
       </p>
-      <a href="#waitlist" className="hero-cta">
-        Join The Waitlist
-        <span>→</span>
-      </a>
+        <Link href="#waitlist" className="footer-cta">
+           Join The Waitlist
+          <span>→</span>
+        </Link>
     </div>
       </section>
       {/* Innovation Partners */}
@@ -148,10 +152,10 @@ export default function Home() {
     <div className="footer-container">
       <div className="footer-content">
         <div className="footer-logo">CalvinBall Technologies</div>
-        <a href="#waitlist" className="footer-cta">
-          Join The Waitlist
+        <Link href="#waitlist" className="footer-cta">
+           Join The Waitlist
           <span>→</span>
-        </a>
+        </Link>
       </div>
       <div className="certifications">
         <div className="cert">
