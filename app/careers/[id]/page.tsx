@@ -1,4 +1,5 @@
 import jobs from "@/joblist.json";
+import Link from "next/link";
 
 interface JobPageProps {
   params: { id: string };
