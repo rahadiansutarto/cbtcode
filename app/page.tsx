@@ -1,38 +1,8 @@
 import Link from "next/link";
+
 export default function Home() {
   return (
     <>
-      {/* Header */}
-{/*       <header className="header">
-    <div className="nav-container">
-      <a href="/" className="logo">
-        CalvinBall Technologies
-      </a>
-      <nav>
-        <ul className="nav-menu">
-          <li>
-            <a href="/">Overview</a>
-          </li>
-          <li>
-            <a href="#product">Product</a>
-          </li>
-          <li>
-            <a href="#team">Team</a>
-          </li>
-          <li>
-            <a href="#experts">Experts</a>
-          </li>
-          <li>
-            <a href="/careers">Career</a>
-          </li>
-        </ul>
-      </nav>
-      <a href="#waitlist" className="cta-button">
-        Join The Waitlist
-        <span>→</span>
-      </a>
-    </div>
-      </header> */}
         <header className="header">
         <div className="nav-container">
           <Link href="/" className="logo">
@@ -43,23 +13,14 @@ export default function Home() {
               <li>
                 <Link href="/">Overview</Link>
               </li>
-{/*               <li>
-                <a href="#product">Product</a>
-              </li>
-              <li>
-                <a href="#team">Team</a>
-              </li>
-              <li>
-                <a href="#experts">Experts</a>
-              </li> */}
+              <li><Link href="/#product">Product</Link></li>
+              <li><Link href="/#team">Team</Link></li>
+              <li><Link href="/#experts">Experts</Link></li>
               <li>
                 <Link href="/careers">Career</Link>
               </li>
             </ul>
           </nav>
-{/*           <a href="#waitlist" className="cta-button">
-            Join The Waitlist <span>→</span>
-          </a> */}
           <Link href="#waitlist" className="footer-cta">
            Join The Waitlist
           <span>→</span>
@@ -147,31 +108,6 @@ export default function Home() {
       </div>
     </div>
       </section>
-      {/* Footer */}
-      <footer className="footer">
-    <div className="footer-container">
-      <div className="footer-content">
-        <div className="footer-logo">CalvinBall Technologies</div>
-        <Link href="#waitlist" className="footer-cta">
-           Join The Waitlist
-          <span>→</span>
-        </Link>
-      </div>
-      <div className="certifications">
-        <div className="cert">
-          <div className="cert-icon" />
-          <span>ISO Certified</span>
-        </div>
-        <div className="cert">
-          <div className="cert-icon" />
-          <span>SOC Compliant</span>
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <p>Copyright © 2024 CalvinBall Technologies. All rights reserved.</p>
-      </div>
-    </div>
-      </footer>
     </>
   );
 }

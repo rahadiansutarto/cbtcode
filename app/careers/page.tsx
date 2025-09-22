@@ -7,6 +7,7 @@ import jobs from "@/joblist.json";
 export default function CareersPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRole, setSelectedRole] = useState<string | null>(null);
+  
 
   const openModal = (role: string | null = null) => {
     setSelectedRole(role);
@@ -18,24 +19,6 @@ export default function CareersPage() {
   };
   return (
     <>
-      <header className="header">
-        <div className="nav-container">
-          <Link href="/" className="logo">CalvinBall Technologies</Link>
-          <nav>
-            <ul className="nav-menu">
-              <li><Link href="/">Overview</Link></li>
-              <li><Link href="/#product">Product</Link></li>
-              <li><Link href="/#team">Team</Link></li>
-              <li><Link href="/#experts">Experts</Link></li>
-              <li><Link href="/careers">Career</Link></li>
-            </ul>
-          </nav>
-          <Link href="#waitlist" className="footer-cta">
-           Join The Waitlist
-          <span>→</span>
-        </Link>
-        </div>
-      </header>
       <main>
         <section className="hero">
           <div className="hero-container">
@@ -52,20 +35,6 @@ export default function CareersPage() {
               <p className="text-base text-neutral-400 line-clamp-3">{job.description} </p>
               </Link>
               ))}
-              {/* <div className="testimonial" onClick={() => openModal("Chief Growth Officer")} style={{ cursor: "pointer" }} role="button" tabIndex={0} aria-label="Apply for Chief Growth Officer" onKeyDown={(e) => { if (e.key === "Enter") openModal("Chief Growth Officer"); }}>
-                <div className="testimonial-author">Chief Growth Officer</div>
-                <div className="testimonial-company">
-                  Were looking for a Chief Growth Officer to lead our AI-powered transformation agenda across Southeast Asia. This is not your typical sales leadership gig. You'll be working at the edge of enterprise AI, partnering with CXOs of the region's biggest brands to turn cutting-edge tech into real business outcomes. If you thrive where business meets technology, and if you're ready to shape the future of GTM in the AI era — this is your shot.
-                </div>
-                
-              </div>
-              <div className="testimonial" onClick={() => openModal("Operations Assistant Manager")} style={{ cursor: "pointer" }} role="button" tabIndex={0} aria-label="Apply for Operations Assistant Manager" onKeyDown={(e) => { if (e.key === "Enter") openModal("Operations Assistant Manager"); }}>
-                <div className="testimonial-author">Operations Assistant Manager</div>
-                <div className="testimonial-company">
-                  Were looking for a proactive, detail-obsessed operator to serve as the administrative engine of our operations. You'll be the anchor that keeps things structured and on track - managing documentation, coordinating vendors and clients, maintaining financial records, and ensuring nothing operational ever becomes a bottleneck.
-                </div>
-              </div>
-               */}
             </div>
             <div className="text-center">
               <button className="hero-cta mt-8" onClick={(e) => {e.preventDefault(); openModal(null);}}> Apply Now <span>→</span></button>
@@ -74,6 +43,7 @@ export default function CareersPage() {
               <a className="hero-cta" href="id">Details <span>→</span></a>
             </div> */}
           </div>
+          
         </section>
         <section className="hubs">
           <div className="hubs-container">
@@ -95,53 +65,75 @@ export default function CareersPage() {
           <div className="modal" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <h3 id="applyModalTitle">Apply {selectedRole ? `for ${selectedRole}` : "Now"}</h3>
-              <button className="modal-close" onClick={closeModal} aria-label="Close">×</button>
+              <button className="modal-close" onClick={closeModal} aria-label="Close">x</button>
             </div>
-            <div className="modal-body">
-              <form action="#" onSubmit={(e) => { e.preventDefault(); closeModal(); }}>
-                <div className="form-field">
-                  <label htmlFor="role">Role</label>
-                  <input id="role" name="role" type="text" defaultValue={selectedRole ?? ""} placeholder="Type Role" />
-                </div>
-                <div className="form-field">
-                  <label htmlFor="name">Full Name</label>
-                  <input id="name" name="name" type="text" placeholder="Your name" required />
-                </div>
-                <div className="form-field">
-                  <label htmlFor="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="yourname@email.com" required />
-                </div>
-                <div className="form-field">
-                  <label htmlFor="message">Message</label>
-                  <textarea id="message" name="message" rows={4} placeholder="Tell us briefly about yourself"></textarea>
-                </div>
-                <div className="modal-actions">
-                  <button type="button" className="btn-secondary" onClick={closeModal}>Cancel</button>
-                  <button type="submit" className="btn-primary">Submit</button>
-                </div>
-              </form>
+          <div className="modal-body">
+            <form action="#" onSubmit={(e) => {e.preventDefault(); closeModal();}} className="space-y-6">
+              {/* Role */}
+              <div className="form-field">
+                <label htmlFor="role">Role</label>
+                <input id="role" name="role" type="text" defaultValue={selectedRole ?? ""} placeholder="Type Role"/>
             </div>
+
+              {/* Full Name */}
+              <div className="form-field">
+                <label htmlFor="name">Full Name</label>
+                <input 
+                  id="name" 
+                  name="name" 
+                  type="text" 
+                  placeholder="Your name" required 
+                />
+              </div>
+
+              {/* Email */}
+              <div className="form-field">
+                <label htmlFor="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="yourname@email.com" required />
+              </div>
+
+              {/* Message */}
+              <div className="form-field">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  placeholder="Tell us briefly about yourself"
+                ></textarea>
+              </div>
+
+              {/* CV Upload */}
+              <div className="form-field">
+                <label htmlFor="cv">Upload CV</label>
+                <input
+                 id="cv"
+                 name="cv"
+                  type="file"
+                  accept=".pdf,.docx"
+                  required
+                  className="block w-full text-sm text-gray-300 
+                   file:mr-4 file:py-2 file:px-4
+                   file:rounded-lg file:border-0
+                   file:text-sm file:font-semibold
+                   file:bg-purple-600 file:text-white
+                   hover:file:bg-purple-700
+                   cursor-pointer"
+                />
+                <p className="text-xs text-gray-400 mt-2"> Accepted formats: .pdf, .docx </p>
+              </div>
+
+                {/* Actions */}
+                  <div className="modal-actions flex justify-end gap-4">
+                    <button type="button" className="btn-secondary" onClick={closeModal}> Cancel </button>
+                    <button type="submit" className="btn-primary"> Submit </button>
+                  </div>
+            </form>
+          </div>
           </div>
         </div>
       )}
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-content">
-            <div className="footer-logo">CalvinBall Technologies</div>
-              <Link href="#waitlist" className="footer-cta">
-                Join The Waitlist
-                <span>→</span>
-              </Link>
-          </div>
-          <div className="certifications">
-            <div className="cert"><div className="cert-icon" /><span>ISO Certified</span></div>
-            <div className="cert"><div className="cert-icon" /><span>SOC Compliant</span></div>
-          </div>
-          <div className="footer-bottom">
-            <p>Copyright © 2024 CalvinBall Technologies. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      
     </>
   );
 }
