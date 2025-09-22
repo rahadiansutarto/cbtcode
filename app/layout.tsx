@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import WaitlistManager from "./components/WaitlistManager";
+import { submitWaitlist } from "@/app/actions/waitlist";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,7 +63,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
             </div>
           </div>
         </footer>
-        <WaitlistManager />
+        <WaitlistManager submitWaitlist={submitWaitlist} />
       </body>
     </html>
   );

@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-export default function WaitlistManager() {
+type Props = {
+  submitWaitlist: (formData: FormData) => Promise<{ ok: boolean; error?: string }>;
+};
+
+export default function WaitlistManager({ submitWaitlist }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -40,10 +44,13 @@ export default function WaitlistManager() {
         </div>
         <div className="modal-body">
           <form
-            action="#"
-            onSubmit={(e) => {
-              e.preventDefault();
-              close();
+            action={async (formData) => {
+              const res = await submitWaitlist(formData);
+              if (res.ok) {
+                close();
+              } else {
+                alert(res.error || "Submission failed");
+              }
             }}
           >
             <div className="form-field">
