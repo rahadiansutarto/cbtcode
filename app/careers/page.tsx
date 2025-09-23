@@ -40,8 +40,9 @@ export default function CareersPage() {
       }
       setSubmitMsg("Application submitted successfully.");
       form.reset();
-    } catch (err: any) {
-      setSubmitMsg(err.message || "Something went wrong.");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Something went wrong.";
+      setSubmitMsg(message);
     } finally {
       setSubmitting(false);
     }
