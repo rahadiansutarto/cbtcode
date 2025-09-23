@@ -11,6 +11,14 @@ if (!globalPool) {
   (global as unknown as { __pg_pool?: Pool }).__pg_pool = globalPool;
 }
 
-export const db = globalPool;
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL is not set");
+}
+
+export const db = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});
+
+// export const db = globalPool;
 
 

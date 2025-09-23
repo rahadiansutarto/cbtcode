@@ -7,6 +7,8 @@ import jobs from "@/joblist.json";
 export default function CareersPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRole, setSelectedRole] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitMsg, setSubmitMsg] = useState<string | null>(null);
   
 
   const openModal = (role: string | null = null) => {
@@ -17,6 +19,34 @@ export default function CareersPage() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSubmitMsg(null);
+    setSubmitting(true);
+    try {
+      const form = e.currentTarget;
+      const data = new FormData(form);
+      // include role
+      if (selectedRole && !data.get("role")) data.set("role", selectedRole);
+
+      const res = await fetch("/api/apply", {
+        method: "POST",
+        body: data,
+      });
+
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.ok) {
+        throw new Error(json.error || "Upload failed");
+      }
+      setSubmitMsg("Application submitted successfully.");
+      form.reset();
+    } catch (err: any) {
+      setSubmitMsg(err.message || "Something went wrong.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   return (
     <>
       <main>
@@ -39,9 +69,6 @@ export default function CareersPage() {
             <div className="text-center">
               <button className="hero-cta mt-8" onClick={(e) => {e.preventDefault(); openModal(null);}}> Apply Now <span>→</span></button>
             </div>
-            {/* <div className="text-center">
-              <a className="hero-cta" href="id">Details <span>→</span></a>
-            </div> */}
           </div>
           
         </section>
@@ -68,7 +95,7 @@ export default function CareersPage() {
               <button className="modal-close" onClick={closeModal} aria-label="Close">x</button>
             </div>
           <div className="modal-body">
-            <form action="#" onSubmit={(e) => {e.preventDefault(); closeModal();}} className="space-y-6">
+            <form action="#" onSubmit={handleSubmit} className="space-y-6">
               {/* Role */}
               <div className="form-field">
                 <label htmlFor="role">Role</label>
@@ -124,9 +151,14 @@ export default function CareersPage() {
               </div>
 
                 {/* Actions */}
+                  {submitMsg && (
+                    <p className="text-sm" aria-live="polite">{submitMsg}</p>
+                  )}
                   <div className="modal-actions flex justify-end gap-4">
-                    <button type="button" className="btn-secondary" onClick={closeModal}> Cancel </button>
-                    <button type="submit" className="btn-primary"> Submit </button>
+                    <button type="button" className="btn-secondary" onClick={closeModal} disabled={submitting}> Cancel </button>
+                    <button type="submit" className="btn-primary" disabled={submitting}>
+                      {submitting ? "Submitting..." : "Submit"}
+                    </button>
                   </div>
             </form>
           </div>
