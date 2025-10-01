@@ -1,4 +1,3 @@
-import Link from "next/link";
 
 export default function Team() {
   return (
@@ -8,10 +7,10 @@ export default function Team() {
         <div className="hero-container">
           <h1>Calvinballer Code</h1>
           <p className="hero-description">
-            We're techno-optimists who believe the next era of enterprise transformation will be powered by AI, guided by human expertise. We've led iconic brands at world-class companies, built billion $ product lines and trained at the top global institutions.
+            We&rsquo;re techno-optimists who believe the next era of enterprise transformation will be powered by AI, guided by human expertise. We&rsquo;ve led iconic brands at world-class companies, built billion $ product lines and trained at the top global institutions.
           </p>
           <p className="hero-description">
-            That's why we're building Vertical AI Agents: domain-specific, action-driven systems that make enterprise execution faster, smarter, and more consistent.
+            That&rsquo;s why we&rsquo;re building Vertical AI Agents: domain-specific, action-driven systems that make enterprise execution faster, smarter, and more consistent.
           </p>
         </div>
       </section>
@@ -85,7 +84,7 @@ export default function Team() {
               </div>
               <h3>Gurnoor Dhillon</h3>
               <h4>Chief Executive Officer</h4>
-              <p>"The Calvinballer-in-Chief. Economist by degree, product by choice. Built $1 B+ beasts by bending the..."<span className="read-more">Read more</span></p>
+              <p>&ldquo;The Calvinballer-in-Chief. Economist by degree, product by choice. Built $1 B+ beasts by bending the...&rdquo;<span className="read-more">Read more</span></p>
             </div>
             
             <div className="team-member">
@@ -94,7 +93,7 @@ export default function Team() {
               </div>
               <h3>Sandeep Ramesh</h3>
               <h4>Chief Business Officer</h4>
-              <p>"Scaled YouTube to $1B in revenue. Led Google's $10B+ Global Partners Program. Managed billion-dollar..."<span className="read-more">Read more</span></p>
+              <p>&ldquo;Scaled YouTube to $1B in revenue. Led Google&rsquo;s $10B+ Global Partners Program. Managed billion-dollar...&rdquo;<span className="read-more">Read more</span></p>
             </div>
             
             <div className="team-member">
@@ -103,7 +102,7 @@ export default function Team() {
               </div>
               <h3>Axel Wehr</h3>
               <h4>Chief Financial Officer</h4>
-              <p>"Numbers ninja with founder mileage. Ex–Bain Capital & Princeton. Managed $200M in VC, backed SaaS & ..."<span className="read-more">Read more</span></p>
+              <p>&ldquo;Numbers ninja with founder mileage. Ex–Bain Capital & Princeton. Managed $200M in VC, backed SaaS & ...&rdquo;<span className="read-more">Read more</span></p>
             </div>
           </div>
         </div>

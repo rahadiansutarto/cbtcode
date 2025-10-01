@@ -36,7 +36,7 @@ export default function Product() {
             
             <div className="use-case">
               <h4>Root Cause Analysis</h4>
-              <p>Diagnose issues fast. KJ finds the 'why' with built-in CPG expertise.</p>
+              <p>Diagnose issues fast. KJ finds the &lsquo;why&rsquo; with built-in CPG expertise.</p>
             </div>
             
             <div className="use-case">
