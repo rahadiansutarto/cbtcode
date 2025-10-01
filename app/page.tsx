@@ -3,30 +3,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-        <header className="header">
-        <div className="nav-container">
-          <Link href="/" className="logo">
-            CalvinBall Technologies
-          </Link>
-          <nav>
-            <ul className="nav-menu">
-              <li>
-                <Link href="/">Overview</Link>
-              </li>
-              <li><Link href="/#product">Product</Link></li>
-              <li><Link href="/#team">Team</Link></li>
-              <li><Link href="/#experts">Experts</Link></li>
-              <li>
-                <Link href="/careers">Career</Link>
-              </li>
-            </ul>
-          </nav>
-          <Link href="#waitlist" className="footer-cta">
-           Join The Waitlist
-          <span>→</span>
-          </Link>
-        </div>
-      </header>
       {/* Hero Section */}
       <section className="hero">
     <div className="hero-container">
@@ -41,24 +17,36 @@ export default function Home() {
         </Link>
     </div>
       </section>
-      {/* Innovation Partners */}
+      {/* Product Section - Innovation Partners */}
       <section className="partners" id="product">
     <div className="partners-container">
       <h2>Our Innovation Partners</h2>
-      <div className="partners-grid">
-        <div className="partner-logo">Marico</div>
-        <div className="partner-logo">Godrej</div>
-        <div className="partner-logo">Concha y Toro</div>
-        <div className="partner-logo">ITC</div>
-        <div className="partner-logo">Unilever</div>
-        <div className="partner-logo">LVMH</div>
-        <div className="partner-logo">Colgate-Palmolive</div>
-        <div className="partner-logo">Wings</div>
-        <div className="partner-logo">Mayora</div>
+      <div className="partners-marquee" aria-label="Innovation partners">
+        <div className="marquee-track">
+          <div className="partner-item">Marico</div>
+          <div className="partner-item">Godrej</div>
+          <div className="partner-item">Concha y Toro</div>
+          <div className="partner-item">ITC</div>
+          <div className="partner-item">Unilever</div>
+          <div className="partner-item">LVMH</div>
+          <div className="partner-item">Colgate-Palmolive</div>
+          <div className="partner-item">Wings</div>
+          <div className="partner-item">Mayora</div>
+          {/* duplicate for seamless loop */}
+          <div className="partner-item" aria-hidden>Marico</div>
+          <div className="partner-item" aria-hidden>Godrej</div>
+          <div className="partner-item" aria-hidden>Concha y Toro</div>
+          <div className="partner-item" aria-hidden>ITC</div>
+          <div className="partner-item" aria-hidden>Unilever</div>
+          <div className="partner-item" aria-hidden>LVMH</div>
+          <div className="partner-item" aria-hidden>Colgate-Palmolive</div>
+          <div className="partner-item" aria-hidden>Wings</div>
+          <div className="partner-item" aria-hidden>Mayora</div>
+        </div>
       </div>
     </div>
       </section>
-      {/* Testimonials */}
+      {/* Team Section - Testimonials */}
       <section className="testimonials" id="team">
     <div className="testimonials-container">
       <div className="testimonials-grid">
@@ -88,7 +76,7 @@ export default function Home() {
       </div>
     </div>
       </section>
-      {/* Calvinballer Hubs */}
+      {/* Experts Section - Calvinballer Hubs */}
       <section className="hubs" id="experts">
     <div className="hubs-container">
       <h2>Calvinballer Hubs</h2>

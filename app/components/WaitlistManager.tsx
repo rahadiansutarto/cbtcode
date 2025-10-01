@@ -54,20 +54,16 @@ export default function WaitlistManager({ submitWaitlist }: Props) {
             }}
           >
             <div className="form-field">
-              {/* <label htmlFor="wl-name">Full Name</label> */}
               <input id="wl-email" name="email" type="email" placeholder="Corporate Email*" required />
             </div>
             <div className="form-field">
-              {/* <label htmlFor="wl-email">Email</label> */}
-              <input id="wl-name" name="name" type="text" placeholder="LinkedIn*" required />
-            </div>
-             <div className="form-field">
-              {/* <label htmlFor="wl-note">Note (optional)</label> */}
-              <textarea id="wl-note" name="note" rows={2} placeholder="Area of expertise" />
+              <input id="wl-linkedin" name="linkedin" type="url" placeholder="LinkedIn Profile URL*" required />
             </div>
             <div className="form-field">
-              {/* <label htmlFor="wl-note">Note (optional)</label> */}
-              <textarea id="wl-note" name="note" rows={3} placeholder="Anything you would like us to know..." />
+              <textarea id="wl-expertise" name="expertise" rows={2} placeholder="Area of expertise" />
+            </div>
+            <div className="form-field">
+              <textarea id="wl-notes" name="notes" rows={3} placeholder="Anything you would like us to know..." />
             </div>
             <div className="modal-actions">
               <button type="button" className="btn-secondary" onClick={close}>Cancel</button>

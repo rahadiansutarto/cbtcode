@@ -82,9 +82,9 @@ export default function CareersPage() {
               <div className="hub"><div className="hub-name">Singapore</div></div>
               <div className="hub"><div className="hub-name">Bali</div></div>
             </div>
-            <div>
+            {/* <div>
               <Link href="mailto:careers@calvinballtech.com">Send Your Resume →</Link>
-            </div>
+            </div> */}
           </div>
         </section>
       </main>
