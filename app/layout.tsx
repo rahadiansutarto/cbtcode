@@ -43,7 +43,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
         <header className="header">
           <div className="nav-container">
             <div className="logo-section">
-              <Image src="/cbt_log.png" alt="Logo"width={60}height={50}/>
+              <Image src="/cbt_log.png" alt="Logo" width={50} height={50}/>
               <Link href="/" className="logo">CalvinBall <br /> Technologies</Link>
             </div>
             <nav>
@@ -66,7 +66,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
           <div className="footer-container">
             <div className="footer-content">
               <div className="logo-section">
-                <Image src="/cbt_log.png" alt="Logo"width={60}height={10}/>
+                <Image src="/cbt_log.png" alt="Logo" width={60} height={10}/>
                 <div className="footer-logo">CalvinBall Technologies</div>
               </div>
                 <Link href="#waitlist" className="footer-cta">

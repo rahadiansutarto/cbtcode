@@ -18,55 +18,108 @@ export default function Team() {
       {/* Calvinballer Code Section */}
       <section className="calvinballer-code">
         <div className="code-container">
-          <div className="code-grid">
-            <div className="code-item">
-              <h3>Calvinballer Code 1</h3>
-              <p>Strive for euphoria</p>
-            </div>
-            
-            <div className="code-item">
-              <h3>Calvinballer Code 2</h3>
-              <p>Take ownership: individually and collectively</p>
-            </div>
-            
-            <div className="code-item">
-              <h3>Calvinballer Code 3</h3>
-              <p>Be resilient and persistent</p>
-            </div>
-            
-            <div className="code-item">
-              <h3>Calvinballer Code 4</h3>
-              <p>Embrace the power of imagination</p>
-            </div>
-            
-            <div className="code-item">
-              <h3>Calvinballer Code 5</h3>
-              <p>Be brave and not fearless. Do what is right and not what is easy</p>
-            </div>
-            
-            <div className="code-item">
-              <h3>Calvinballer Code 6</h3>
-              <p>Constant innovation</p>
-            </div>
-            
-            <div className="code-item">
-              <h3>Calvinballer Code 7</h3>
-              <p>Enjoy the journey and not the destination</p>
-            </div>
-            
-            <div className="code-item">
-              <h3>Calvinballer Code 8</h3>
-              <p>Have trust: focus on your own grass, the color is not important</p>
-            </div>
-            
-            <div className="code-item">
-              <h3>Calvinballer Code 9</h3>
-              <p>Work smart, always find time to do nothing</p>
-            </div>
-            
-            <div className="code-item">
-              <h3>Calvinballer Code 10</h3>
-              <p>Collaborate with compassion</p>
+          <div className="code-marquee" aria-label="Calvinballer Code">
+            <div className="code-track">
+              <div className="code-item">
+                <h3>Calvinballer Code 1</h3>
+                <p>Strive for euphoria</p>
+              </div>
+              
+              <div className="code-item">
+                <h3>Calvinballer Code 2</h3>
+                <p>Take ownership: individually and collectively</p>
+              </div>
+              
+              <div className="code-item">
+                <h3>Calvinballer Code 3</h3>
+                <p>Be resilient and persistent</p>
+              </div>
+              
+              <div className="code-item">
+                <h3>Calvinballer Code 4</h3>
+                <p>Embrace the power of imagination</p>
+              </div>
+              
+              <div className="code-item">
+                <h3>Calvinballer Code 5</h3>
+                <p>Be brave and not fearless. Do what is right and not what is easy</p>
+              </div>
+              
+              <div className="code-item">
+                <h3>Calvinballer Code 6</h3>
+                <p>Constant innovation</p>
+              </div>
+              
+              <div className="code-item">
+                <h3>Calvinballer Code 7</h3>
+                <p>Enjoy the journey and not the destination</p>
+              </div>
+              
+              <div className="code-item">
+                <h3>Calvinballer Code 8</h3>
+                <p>Have trust: focus on your own grass, the color is not important</p>
+              </div>
+              
+              <div className="code-item">
+                <h3>Calvinballer Code 9</h3>
+                <p>Work smart, always find time to do nothing</p>
+              </div>
+              
+              <div className="code-item">
+                <h3>Calvinballer Code 10</h3>
+                <p>Collaborate with compassion</p>
+              </div>
+              
+              {/* duplicate for seamless loop */}
+              <div className="code-item" aria-hidden>
+                <h3>Calvinballer Code 1</h3>
+                <p>Strive for euphoria</p>
+              </div>
+              
+              <div className="code-item" aria-hidden>
+                <h3>Calvinballer Code 2</h3>
+                <p>Take ownership: individually and collectively</p>
+              </div>
+              
+              <div className="code-item" aria-hidden>
+                <h3>Calvinballer Code 3</h3>
+                <p>Be resilient and persistent</p>
+              </div>
+              
+              <div className="code-item" aria-hidden>
+                <h3>Calvinballer Code 4</h3>
+                <p>Embrace the power of imagination</p>
+              </div>
+              
+              <div className="code-item" aria-hidden>
+                <h3>Calvinballer Code 5</h3>
+                <p>Be brave and not fearless. Do what is right and not what is easy</p>
+              </div>
+              
+              <div className="code-item" aria-hidden>
+                <h3>Calvinballer Code 6</h3>
+                <p>Constant innovation</p>
+              </div>
+              
+              <div className="code-item" aria-hidden>
+                <h3>Calvinballer Code 7</h3>
+                <p>Enjoy the journey and not the destination</p>
+              </div>
+              
+              <div className="code-item" aria-hidden>
+                <h3>Calvinballer Code 8</h3>
+                <p>Have trust: focus on your own grass, the color is not important</p>
+              </div>
+              
+              <div className="code-item" aria-hidden>
+                <h3>Calvinballer Code 9</h3>
+                <p>Work smart, always find time to do nothing</p>
+              </div>
+              
+              <div className="code-item" aria-hidden>
+                <h3>Calvinballer Code 10</h3>
+                <p>Collaborate with compassion</p>
+              </div>
             </div>
           </div>
         </div>

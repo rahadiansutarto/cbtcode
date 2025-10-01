@@ -16,6 +16,9 @@ body {
 .nav-container {
   @apply max-w-[1200px] flex justify-between items-center mx-auto my-0 px-8 py-0;
 }
+.logo-section {
+  @apply flex items-center gap-3;
+}
 .logo {
   @apply text-2xl font-bold text-[white] no-underline ;
 }
@@ -60,6 +63,11 @@ body {
   background: #171929;
   background: radial-gradient(circle,rgba(23, 25, 41, 1) 0%, rgba(0, 0, 0, 1) 61%);
 }
+.hero-left {
+  @apply text-left px-16 py-32 bg-white;
+  background: #171929;
+  background: radial-gradient(circle,rgba(23, 25, 41, 1) 0%, rgba(0, 0, 0, 1) 61%);
+}
 
 .hero-container {
   @apply max-w-[1200px] mx-auto my-0 px-8 py-0 text-white;
@@ -71,13 +79,13 @@ body {
   -webkit-text-fill-color: transparent;
 } */
 .hero h1 {
-  @apply text-2xl font-bold text-white mb-4;
+  @apply text-4xl font-bold text-white mb-4;
 }
 .hero-subtitle {
   @apply text-6xl font-bold text-white max-w-4xl mb-8 mx-auto leading-tight;
 }
 .hero-description {
-  @apply text-xl text-[#666666] max-w-3xl mb-12 mx-auto text-white;
+  @apply text-2xl text-[#666666] max-w-3xl mb-12 mx-auto text-white;
 }
 .hero-cta {
   @apply inline-flex items-center gap-2 text-[white] no-underline font-semibold text-[1.1rem] transition-all duration-[0.5s] ease-[ease] px-8 py-4 rounded-xl hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)];
@@ -392,13 +400,13 @@ body {
   @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16;
 }
 .use-case {
-  @apply p-8 rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow duration-300;
+  @apply p-8 rounded-2xl border border-gray-800 bg-gray-900 shadow-sm hover:shadow-md transition-shadow duration-300;
 }
 .use-case h4 {
-  @apply text-xl font-semibold text-black mb-4;
+  @apply text-xl font-semibold text-white mb-4;
 }
 .use-case p {
-  @apply text-gray-600 leading-relaxed;
+  @apply text-gray-300 leading-relaxed;
 }
 .product-cta {
   @apply text-center;
@@ -411,11 +419,17 @@ body {
 .code-container {
   @apply max-w-6xl mx-auto my-0 px-8 py-0 text-black;
 }
-.code-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+.code-marquee {
+  @apply relative overflow-hidden mx-auto my-0 w-full;
+}
+.code-track {
+  @apply flex gap-8 items-center;
+  animation: marquee 60s linear infinite;
+  display: flex;
+  width: max-content;
 }
 .code-item {
-  @apply p-8 rounded-2xl border border-gray-800 bg-gray-900;
+  @apply p-8 rounded-2xl border border-gray-800 bg-gray-900 flex-shrink-0 min-w-[300px];
 }
 .code-item h3 {
   @apply text-xl font-semibold text-white mb-4;
