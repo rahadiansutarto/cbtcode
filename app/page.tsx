@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -23,25 +24,79 @@ export default function Home() {
       <h2>Our Innovation Partners</h2>
       <div className="partners-marquee" aria-label="Innovation partners">
         <div className="marquee-track">
-          <div className="partner-item">Marico</div>
-          <div className="partner-item">Godrej</div>
-          <div className="partner-item">Concha y Toro</div>
-          <div className="partner-item">ITC</div>
-          <div className="partner-item">Unilever</div>
-          <div className="partner-item">LVMH</div>
-          <div className="partner-item">Colgate-Palmolive</div>
-          <div className="partner-item">Wings</div>
-          <div className="partner-item">Mayora</div>
+          <div className="partner-item">
+            <Image src="/marico.webp" alt="Marico" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Marico</div>
+          </div>
+          <div className="partner-item">
+            <Image src="/godrej.svg" alt="Godrej" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Godrej</div>
+          </div>
+          <div className="partner-item">
+            <Image src="/conchaytoro.svg" alt="Concha y Toro" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Concha y Toro</div>
+          </div>
+          <div className="partner-item">
+            <Image src="/itc.svg" alt="ITC" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">ITC</div>
+          </div>
+          <div className="partner-item">
+            <Image src="/unilever.svg" alt="Unilever" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Unilever</div>
+          </div>
+          <div className="partner-item">
+            <Image src="/lvmh.svg" alt="LVMH" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">LVMH</div>
+          </div>
+          <div className="partner-item">
+            <Image src="/colgate.svg" alt="Colgate-Palmolive" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Colgate-Palmolive</div>
+          </div>
+          <div className="partner-item">
+            <Image src="/wings.svg" alt="Wings" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Wings</div>
+          </div>
+          <div className="partner-item">
+            <Image src="/mayora.svg" alt="Mayora" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Mayora</div>
+          </div>
           {/* duplicate for seamless loop */}
-          <div className="partner-item" aria-hidden>Marico</div>
-          <div className="partner-item" aria-hidden>Godrej</div>
-          <div className="partner-item" aria-hidden>Concha y Toro</div>
-          <div className="partner-item" aria-hidden>ITC</div>
-          <div className="partner-item" aria-hidden>Unilever</div>
-          <div className="partner-item" aria-hidden>LVMH</div>
-          <div className="partner-item" aria-hidden>Colgate-Palmolive</div>
-          <div className="partner-item" aria-hidden>Wings</div>
-          <div className="partner-item" aria-hidden>Mayora</div>
+          <div className="partner-item" aria-hidden>
+            <Image src="/marico.webp" alt="Marico" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Marico</div>
+          </div>
+          <div className="partner-item" aria-hidden>
+            <Image src="/godrej.svg" alt="Godrej" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Godrej</div>
+          </div>
+          <div className="partner-item" aria-hidden>
+            <Image src="/conchaytoro.svg" alt="Concha y Toro" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Concha y Toro</div>
+          </div>
+          <div className="partner-item" aria-hidden>
+            <Image src="/itc.svg" alt="ITC" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">ITC</div>
+          </div>
+          <div className="partner-item" aria-hidden>
+            <Image src="/unilever.svg" alt="Unilever" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Unilever</div>
+          </div>
+          <div className="partner-item" aria-hidden>
+            <Image src="/lvmh.svg" alt="LVMH" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">LVMH</div>
+          </div>
+          <div className="partner-item" aria-hidden>
+            <Image src="/colgate.svg" alt="Colgate-Palmolive" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Colgate-Palmolive</div>
+          </div>
+          <div className="partner-item" aria-hidden>
+            <Image src="/wings.svg" alt="Wings" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Wings</div>
+          </div>
+          <div className="partner-item" aria-hidden>
+            <Image src="/mayora.svg" alt="Mayora" width={120} height={60} className="partner-logo" />
+            <div className="partner-name">Mayora</div>
+          </div>
         </div>
       </div>
     </div>
@@ -82,15 +137,19 @@ export default function Home() {
       <h2>Calvinballer Hubs</h2>
       <div className="hubs-grid">
         <div className="hub">
+          <Image src="/newYork.png" alt="New York" width={200} height={150} className="hub-image" />
           <div className="hub-name">New York</div>
         </div>
         <div className="hub">
+          <Image src="/london.jpeg" alt="London" width={200} height={150} className="hub-image" />
           <div className="hub-name">London</div>
         </div>
         <div className="hub">
+          <Image src="/singaporeX.png" alt="Singapore" width={200} height={150} className="hub-image" />
           <div className="hub-name">Singapore</div>
         </div>
         <div className="hub">
+          <Image src="/balix.png" alt="Bali" width={200} height={150} className="hub-image" />
           <div className="hub-name">Bali</div>
         </div>
       </div>

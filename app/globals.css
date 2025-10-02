@@ -49,15 +49,6 @@ body {
 }
 
 /* Hero Section */
-/* .hero {
-  @apply text-center px-16 py-32;
-  background: #b5b5b5;
-  background: linear-gradient(
-    180deg,
-    rgba(181, 181, 181, 1) 30%,
-    rgba(0, 0, 0, 1) 98%
-  );
-} */
 .hero {
   @apply text-center px-16 py-32 bg-white;
   background: #171929;
@@ -69,23 +60,63 @@ body {
   background: radial-gradient(circle,rgba(23, 25, 41, 1) 0%, rgba(0, 0, 0, 1) 61%);
 }
 
+/* Team page specific hero styling */
+.team-hero {
+  @apply text-left px-16 py-32 bg-white;
+  background: #171929;
+  background: radial-gradient(circle,rgba(23, 25, 41, 1) 0%, rgba(0, 0, 0, 1) 61%);
+}
+
+.team-hero .hero-container {
+  @apply max-w-[1200px] mx-auto my-0 px-8 py-0 text-white text-center;
+}
+
+.team-hero h1 {
+  @apply text-4xl font-bold inline-block mr-4;
+  background: linear-gradient(320.69deg, #ff4423 3.87%, #bf3bba 44.94%, #5911a0 87.26%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.team-hero .code-text {
+  @apply text-6xl font-bold inline-block mr-104;
+  background-image: linear-gradient(318.49deg, #414141 3.74%, #fff 47.05%, #9f9f9f 91.68%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.team-hero .hero-description {
+  @apply text-xl text-white mb-5 leading-relaxed text-left;
+}
+
 .hero-container {
   @apply max-w-[1200px] mx-auto my-0 px-8 py-0 text-white;
 }
-/* .hero h1 {
-  @apply text-[2rem] font-bold bg-clip-text mb-4;
-  background: linear-gradient(135deg, #1a1a1a 0%, #4e4c4c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
+
 .hero h1 {
-  @apply text-4xl font-bold text-white mb-4;
+  @apply text-6xl font-bold text-white mb-8 leading-tight;
 }
 .hero-subtitle {
   @apply text-6xl font-bold text-white max-w-4xl mb-8 mx-auto leading-tight;
 }
 .hero-description {
-  @apply text-2xl text-[#666666] max-w-3xl mb-12 mx-auto text-white;
+  @apply text-xl text-white max-w-4xl mb-6 mx-auto leading-relaxed;
+}
+.hero-subdescription {
+  @apply text-xl text-white max-w-4xl mb-12 mx-auto leading-relaxed;
+}
+.floating-image {
+  @apply relative mb-12;
+}
+.floating-image-placeholder {
+  @apply w-32 h-32 mx-auto rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 opacity-80;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
 .hero-cta {
   @apply inline-flex items-center gap-2 text-[white] no-underline font-semibold text-[1.1rem] transition-all duration-[0.5s] ease-[ease] px-8 py-4 rounded-xl hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)];
@@ -112,7 +143,7 @@ body {
   @apply px-0 py-20 bg-black;
 }
 .partners-container {
-  @apply max-w-6xl text-center mx-auto my-0 px-8 py-0;
+  @apply max-w-7xl text-center mx-auto my-0 px-10 py-0;
 }
 .partners h2 {
   @apply text-4xl font-bold text-white mb-16;
@@ -125,7 +156,17 @@ body {
   animation: marquee 20s linear infinite;
 }
 .partner-item {
-  @apply text-2xl font-semibold opacity-70 transition-opacity duration-[0.3s] ease-[ease] hover:opacity-100 flex-shrink-0;
+  @apply flex flex-col items-center gap-2 opacity-70 transition-opacity duration-[0.3s] ease-[ease] hover:opacity-100 flex-shrink-0;
+  width: 120px;
+  height: 100px;
+}
+.partner-logo {
+  @apply object-contain;
+  width: 120px;
+  height: 60px;
+}
+.partner-name {
+  @apply text-sm font-medium text-white text-center;
 }
 @keyframes marquee {
   0% { transform: translateX(0); }
@@ -143,17 +184,16 @@ body {
   @apply grid grid-cols-2 gap-8;
 }
 .testimonial {
-  @apply p-8 rounded-2xl border border-gray-800;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d1b69 50%, #1a1a1a 100%);
+  @apply p-8 rounded-2xl border border-gray-700/50 bg-gray-900/20 backdrop-blur-sm hover:bg-gray-900/30 transition-all duration-300;
 }
 .testimonial-text {
-  @apply text-lg text-gray-300 italic mb-6 leading-relaxed;
+  @apply text-lg text-white italic mb-6 leading-relaxed;
 }
 .testimonial-author {
   @apply font-semibold text-white mb-1 text-lg;
 }
 .testimonial-company {
-  @apply text-gray-400 text-sm;
+  @apply text-gray-300 text-sm;
 }
 
 /* Experts Section - Calvinballer Hubs */
@@ -170,7 +210,10 @@ body {
   @apply grid grid-cols-4 gap-8;
 }
 .hub {
-  @apply p-8 rounded-2xl border-2 border-gray-800 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-purple-500 bg-gray-900;
+  @apply p-8 rounded-2xl border-2 border-gray-800 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-purple-500 bg-gray-900 text-center;
+}
+.hub-image {
+  @apply rounded-lg mb-4 w-full h-32 object-cover;
 }
 .hub-name {
   @apply text-2xl font-semibold text-white;
@@ -178,7 +221,11 @@ body {
 
 /* Footer */
 .footer {
-  @apply text-white pt-16 pb-12 px-0 bg-gray-900;
+  @apply text-white pt-16 pb-12 px-0;
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 .footer-container {
   @apply max-w-6xl mx-auto my-0 px-8 py-0;
@@ -206,7 +253,7 @@ body {
   @apply w-5 h-5 rounded-full bg-green-500;
 }
 .footer-bottom {
-  @apply text-center text-gray-500 text-sm pt-6 border-t border-gray-800;
+  @apply text-center text-gray-500 text-sm pt-6 border-t border-gray-700/50;
 }
 
 /* Responsive */
@@ -239,98 +286,6 @@ body {
 .hubs .hero-cta { margin-top: 3rem; }
 
 /* Modal */
-/* .modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-}
-.modal {
-  width: 100%;
-  max-width: 560px;
-  background: #0f0f12;
-  border: 1px solid #2a2a2e;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-}
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.25rem;
-  border-bottom: 1px solid #2a2a2e;
-}
-.modal-header h3 {
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-.modal-close {
-  background: transparent;
-  border: none;
-  color: #bbb;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-.modal-body {
-  padding: 1rem 1.25rem 1.25rem;
-}
-.form-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
-  margin-bottom: 0.875rem;
-}
-.form-field label {
-  color: #ddd;
-  font-size: 0.9rem;
-}
-.form-field input,
-.form-field textarea {
-  background: #15161c;
-  border: 1px solid #2a2a2e;
-  color: #f3f3f3;
-  border-radius: 8px;
-  padding: 0.625rem 0.75rem;
-}
-.form-field input:focus,
-.form-field textarea:focus {
-  outline: none;
-  border-color: #7f19a7;
-  box-shadow: 0 0 0 3px rgba(127,25,167,0.25);
-}
-.modal-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-}
-.btn-secondary,
-.btn-primary {
-  padding: 0.625rem 1rem;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  font-weight: 600;
-  cursor: pointer;
-}
-.btn-secondary {
-  background: #1e1f26;
-  color: #ddd;
-  border-color: #2a2a2e;
-}
-.btn-secondary:hover {
-  background: #242633;
-}
-.btn-primary {
-  background: linear-gradient(45deg, rgba(131, 58, 180, 1) 43%, rgb(238, 59, 59) 100%);
-  color: #fff;
-}
-.btn-primary:hover {
-  filter: brightness(1.05);
-} */
  .modal-overlay {
   @apply fixed inset-0 z-[10000] flex items-center justify-center bg-black/60;
 }
@@ -470,6 +425,50 @@ body {
 }
 .read-more {
   @apply text-purple-400 cursor-pointer hover:text-purple-300;
+}
+
+/* Careers Page Styles */
+.careers-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16;
+}
+.career-card {
+  @apply p-8 rounded-2xl border border-gray-700/50 bg-gray-900/20 backdrop-blur-sm hover:bg-gray-900/30 transition-all duration-300;
+}
+.career-title {
+  @apply text-2xl font-semibold text-white mb-4;
+}
+.career-description {
+  @apply text-gray-300 leading-relaxed mb-6;
+}
+.career-meta {
+  @apply flex gap-4 mb-4;
+}
+.career-type {
+  @apply text-sm font-semibold text-purple-400;
+}
+.career-experience {
+  @apply text-sm text-gray-400;
+}
+.career-read-more {
+  @apply text-purple-400 hover:text-purple-300 transition-colors duration-200;
+}
+.careers-cta {
+  @apply px-0 py-20 bg-black;
+}
+.careers-cta-title {
+  @apply text-3xl font-bold text-white mb-6 text-center;
+}
+.careers-cta-description {
+  @apply text-lg text-gray-300 mb-6 text-center max-w-4xl mx-auto;
+}
+.careers-cta-contact {
+  @apply text-lg text-gray-300 mb-4 text-center;
+}
+.careers-email-link {
+  @apply text-purple-400 hover:text-purple-300 transition-colors duration-200;
+}
+.careers-cta-tagline {
+  @apply text-lg font-semibold text-white text-center;
 }
 
 /* Experts Page Styles */

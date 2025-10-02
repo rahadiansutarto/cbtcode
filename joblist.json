@@ -2,11 +2,36 @@
   {
     "id": "chief-growth-officer",
     "title": "Chief Growth Officer",
-    "description": "We're looking for a Chief Growth Officer to lead our AI-powered transformation agenda across Southeast Asia. This is not your typical sales leadership gig. You'll be working at the edge of enterprise AI, partnering with CXOs of the region's biggest brands to turn cutting-edge tech into real business outcomes. If you thrive where business meets technology, and if you're ready to shape the future of GTM in the AI era — this is your shot. "
+    "description": "We're looking for a Chief Growth Officer to lead our AI-powered transformation agenda across Southeast Asia. This is not your typical sales leadership gig. You'll be working at the edge of enterprise AI, partnering with CXOs of the region's biggest brands to turn cutting-edge tech into real business outcomes. If you thrive where business meets technology, and if you're ready to shape the future of GTM in the AI era — this is your shot.",
+    "type": "Full-time",
+    "experience": "8–10 Years of Experience"
   },
   {
     "id": "operations-assistant-manager",
     "title": "Operations Assistant Manager",
-    "description": "We're looking for a proactive, detail-obsessed operator to serve as the administrative engine of our operations. You'll be the anchor that keeps things structured and on track - managing documentation, coordinating vendors and clients, maintaining financial records, and ensuring nothing operational ever becomes a bottleneck. This role is the backbone of our operational machine - for someone who thrives on process, precision, and getting things done."
+    "description": "We're looking for a proactive, detail-obsessed operator to serve as the administrative engine of our operations. You'll be the anchor that keeps things structured and on track - managing documentation, coordinating vendors and clients, maintaining financial records, and ensuring nothing operational ever becomes a bottleneck. This role is the backbone of our operational machine - for someone who thrives on process, precision, and getting things done.",
+    "type": "Full-time",
+    "experience": "3–7 Years of Experience"
+  },
+  {
+    "id": "video-editor-motion-graphics",
+    "title": "Video Editor & Motion Graphics",
+    "description": "We're looking for a high-performance video editor who can turn raw, fast-moving inputs into polished, high-impact outputs - fast. At CalvinBall Technologies, videos are more than just content – they're strategic tools that drive engagement, explain complex concepts, and build our brand narrative.",
+    "type": "Full-time",
+    "experience": "5–7 Years of Experience"
+  },
+  {
+    "id": "brand-community-lead",
+    "title": "Brand & Community Lead",
+    "description": "We're looking for a Brand & Community Lead to shape and amplify Calvinball Tech's voice across every channel and conversation. You'll be the builder behind our public narrative – turning bold ideas into compelling stories that resonate with our audience and drive meaningful engagement.",
+    "type": "Full-time",
+    "experience": "7–10 Years of Experience"
+  },
+  {
+    "id": "senior-product-manager",
+    "title": "Senior Product Manager",
+    "description": "We're looking for a Senior Product Manager to lead the design and execution of next-generation AI agents that power enterprise workflows across marketing, sales, and analytics. This isn't a traditional product role – you'll be working at the intersection of AI, enterprise software, and user experience.",
+    "type": "Full-time",
+    "experience": "10–15 Years of Experience"
   }
 ]

@@ -59,21 +59,46 @@ export default function CareersPage() {
         </section>
         <section className="partners">
           <div className="partners-container">
-            <div className="testimonials-grid">
+            <div className="careers-grid">
               {jobs.map((job) => (
-              <Link key={job.id} href={`/careers/${job.id}`} className="block p-8 border rounded-lg bg-neutral-900 text-white hover:bg-neutral-800 transition">
-              <h3 className="text-2xl font-semibold">{job.title}</h3>
-              <p className="text-base text-neutral-400 line-clamp-3">{job.description} </p>
-              </Link>
+                <div key={job.id} className="career-card">
+                  <h3 className="career-title">{job.title}</h3>
+                  <p className="career-description">{job.description}</p>
+                  <div className="career-meta">
+                    <span className="career-type">{job.type}</span>
+                    <span className="career-experience">{job.experience}</span>
+                  </div>
+                  <Link href={`/careers/${job.id}`} className="career-read-more">
+                    Read more
+                  </Link>
+                </div>
               ))}
             </div>
             <div className="text-center">
-              <button className="hero-cta mt-8" onClick={(e) => {e.preventDefault(); openModal(null);}}> Apply Now <span>→</span></button>
+              <button className="hero-cta mt-8" onClick={(e) => {e.preventDefault(); openModal(null);}}> 
+                Apply Now 
+                <span>→</span>
+              </button>
             </div>
           </div>
-          
         </section>
-        <section className="hubs">
+        
+        <section className="careers-cta">
+          <div className="partners-container">
+            <h2 className="careers-cta-title">Looking for something else?</h2>
+            <p className="careers-cta-description">
+              We&rsquo;re always on the lookout for curious minds, creative builders, and bold thinkers who take initiative and drive impact.
+            </p>
+            <p className="careers-cta-contact">
+              <strong>If you didn&rsquo;t find a role that fits but think you&rsquo;d vibe with us, drop us a line at </strong>
+              <a href="mailto:cbt.recruitment@calvinballtech.com" className="careers-email-link">
+                cbt.recruitment@calvinballtech.com
+              </a>
+            </p>
+            <p className="careers-cta-tagline">Tell us why you belong at CalvinBall Tech.</p>
+          </div>
+        </section>
+        {/* <section className="hubs">
           <div className="hubs-container">
 
             <div className="hubs-grid">
@@ -82,11 +107,8 @@ export default function CareersPage() {
               <div className="hub"><div className="hub-name">Singapore</div></div>
               <div className="hub"><div className="hub-name">Bali</div></div>
             </div>
-            {/* <div>
-              <Link href="mailto:careers@calvinballtech.com">Send Your Resume →</Link>
-            </div> */}
           </div>
-        </section>
+        </section> */}
       </main>
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>

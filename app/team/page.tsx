@@ -3,9 +3,9 @@ export default function Team() {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero team-hero">
         <div className="hero-container">
-          <h1>Calvinballer Code</h1>
+          <h1>Calvinballer</h1><h1 className="code-text">Code</h1>
           <p className="hero-description">
             We&rsquo;re techno-optimists who believe the next era of enterprise transformation will be powered by AI, guided by human expertise. We&rsquo;ve led iconic brands at world-class companies, built billion $ product lines and trained at the top global institutions.
           </p>
