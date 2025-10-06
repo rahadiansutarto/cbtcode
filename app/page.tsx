@@ -14,7 +14,7 @@ export default function Home() {
       </p>
       <div className="hero-video-container">
         <video autoPlay loop muted playsInline className="hero-video">
-          <source src="/vid/vid1.mp4" type="video/mp4" />
+          <source src="/vid/vid2.mp4" type="video/mp4" />
         </video>
       </div>
         <Link href="#waitlist" className="footer-cta">
