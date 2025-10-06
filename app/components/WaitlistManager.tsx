@@ -57,7 +57,7 @@ export default function WaitlistManager({ submitWaitlist }: Props) {
               <input id="wl-email" name="email" type="email" placeholder="Corporate Email*" required />
             </div>
             <div className="form-field">
-              <input id="wl-linkedin" name="linkedin" type="url" placeholder="LinkedIn Profile URL*" required />
+              <input id="wl-name" name="name" type="text" placeholder="LinkedIn Profile*" required />
             </div>
             <div className="form-field">
               <textarea id="wl-expertise" name="expertise" rows={2} placeholder="Area of expertise" />

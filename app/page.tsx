@@ -12,6 +12,11 @@ export default function Home() {
       <p className="hero-description">
         Built by Industry Experts. Engineered for Business Results.
       </p>
+      <div className="hero-video-container">
+        <video autoPlay loop muted playsInline className="hero-video">
+          <source src="/vid/vid1.mp4" type="video/mp4" />
+        </video>
+      </div>
         <Link href="#waitlist" className="footer-cta">
            Join The Waitlist
           <span>→</span>

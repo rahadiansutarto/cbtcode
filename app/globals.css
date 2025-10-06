@@ -5,13 +5,29 @@
 }
 
 body {
-  @apply leading-[1.6] text-[#1a1a1a] bg-[#171929] font-sans;
+  @apply leading-[1.6] text-[#1a1a1a];
+  font-family: var(--font-space-grotesk), sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/bg3.svg') no-repeat center center;
+  background-size: cover;
+  transform: scaleY(1);
+  /* filter: brightness(0.3) contrast(1.2); */
+  z-index: -1;
 }
 
 /* Header */
 .header {
   @apply fixed backdrop-blur-[10px] z-[1000] px-0 py-4 border-b-[#171929] border-b border-solid top-0 inset-x-0;
-  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
 }
 .nav-container {
   @apply max-w-[1200px] flex justify-between items-center mx-auto my-0 px-8 py-0;
@@ -50,21 +66,18 @@ body {
 
 /* Hero Section */
 .hero {
-  @apply text-center px-16 py-32 bg-white;
-  background: #171929;
-  background: radial-gradient(circle,rgba(23, 25, 41, 1) 0%, rgba(0, 0, 0, 1) 61%);
+  @apply text-center px-16 py-32;
+  background: transparent;
 }
 .hero-left {
-  @apply text-left px-16 py-32 bg-white;
-  background: #171929;
-  background: radial-gradient(circle,rgba(23, 25, 41, 1) 0%, rgba(0, 0, 0, 1) 61%);
+  @apply text-left px-16 py-32;
+  background: transparent;
 }
 
 /* Team page specific hero styling */
 .team-hero {
-  @apply text-left px-16 py-32 bg-white;
-  background: #171929;
-  background: radial-gradient(circle,rgba(23, 25, 41, 1) 0%, rgba(0, 0, 0, 1) 61%);
+  @apply text-left px-16 py-32;
+  background: transparent;
 }
 
 .team-hero .hero-container {
@@ -119,7 +132,7 @@ body {
   50% { transform: translateY(-20px); }
 }
 .hero-cta {
-  @apply inline-flex items-center gap-2 text-[white] no-underline font-semibold text-[1.1rem] transition-all duration-[0.5s] ease-[ease] px-8 py-4 rounded-xl hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)];
+  @apply inline-flex items-center gap-2 mt-8 text-[white] no-underline font-semibold text-[1.1rem] transition-all duration-[0.5s] ease-[ease] px-8 py-4 rounded-xl hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)];
   background: #833ab4;
   background: linear-gradient(
     45deg,
@@ -137,10 +150,17 @@ body {
     rgba(253, 246, 29, 1) 95%
   );
 }
+.hero-video-container {
+  @apply max-w-4xl mx-auto my-12;
+}
+.hero-video {
+  @apply w-full h-auto rounded-2xl;
+}
 
 /* Product Section - Innovation Partners */
 .partners {
-  @apply px-0 py-20 bg-black;
+  @apply px-0 py-20;
+  background: transparent;
 }
 .partners-container {
   @apply max-w-7xl text-center mx-auto my-0 px-10 py-0;
@@ -175,7 +195,8 @@ body {
 
 /* Team Section - Testimonials */
 .testimonials {
-  @apply px-0 py-20 bg-black;
+  @apply px-0 py-20;
+  background: transparent;
 }
 .testimonials-container {
   @apply max-w-6xl text-white mx-auto my-0 px-8 py-0;
@@ -198,13 +219,19 @@ body {
 
 /* Experts Section - Calvinballer Hubs */
 .hubs {
-  @apply px-0 py-20 bg-black;
+  @apply px-0 py-20;
+  background: transparent;
 }
 .hubs-container {
   @apply max-w-6xl text-center mx-auto my-0 px-8 py-0;
+  
 }
 .hubs h2 {
   @apply text-4xl font-bold text-white mb-16;
+  background-image: linear-gradient(318.49deg, #414141 3.74%, #fff 47.05%, #9f9f9f 91.68%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hubs-grid {
   @apply grid grid-cols-4 gap-8;
@@ -338,38 +365,71 @@ body {
 /* Product Page Styles */
 .product-section {
   @apply px-0 py-20;
-  background: #171929;
-  background: linear-gradient(180deg,rgba(23, 25, 41, 1) 0%, rgba(0, 0, 0, 1) 9%);
+  background: transparent;
+}
 
+.product-header {
+  @apply max-w-6xl mx-auto my-0 px-8 py-0 text-center mb-16;
 }
-.product-container {
-  @apply max-w-6xl mx-auto my-0 px-8 py-0 text-white;
-}
+
 .product-section h2 {
   @apply text-4xl font-bold text-white mb-4;
 }
+
 .product-subtitle {
-  @apply text-2xl font-semibold text-gray-600 mb-16;
+  @apply text-2xl font-semibold text-white;
 }
-.use-cases-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16;
+
+.use-case-row {
+  @apply max-w-6xl mx-auto my-0 px-8 py-12 flex items-center gap-16;
 }
-.use-case {
-  @apply p-8 rounded-2xl border border-gray-800 bg-gray-900 shadow-sm hover:shadow-md transition-shadow duration-300;
+
+.use-case-row-reverse {
+  @apply flex-row-reverse;
 }
-.use-case h4 {
-  @apply text-xl font-semibold text-white mb-4;
+
+.use-case-content {
+  @apply flex-1 text-white;
 }
-.use-case p {
-  @apply text-gray-300 leading-relaxed;
+
+.use-case-content h3 {
+  @apply text-3xl font-bold mb-6;
 }
+
+.use-case-content p {
+  @apply text-lg text-gray-300 leading-relaxed;
+}
+
+.use-case-video-container {
+  @apply flex-shrink-0;
+  width: 500px;
+}
+
+.use-case-video {
+  @apply w-full h-auto rounded-2xl;
+}
+
 .product-cta {
-  @apply text-center;
+  @apply text-center mt-12;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .use-case-row,
+  .use-case-row-reverse {
+    @apply flex-col;
+  }
+  
+  .use-case-video-container {
+    width: 100%;
+    max-width: 500px;
+  }
 }
 
 /* Team Page Styles */
 .calvinballer-code {
-  @apply py-20 bg-black;
+  @apply py-20;
+  background: transparent;
 }
 .code-container {
   @apply max-w-6xl mx-auto my-0 px-8 py-0 text-black;
@@ -394,7 +454,8 @@ body {
 }
 
 .team-members {
-  @apply px-0 py-20 bg-black;
+  @apply px-0 py-20;
+  background: transparent;
 }
 .team-container {
   @apply max-w-6xl mx-auto my-0 px-8 py-0;
@@ -453,7 +514,8 @@ body {
   @apply text-purple-400 hover:text-purple-300 transition-colors duration-200;
 }
 .careers-cta {
-  @apply px-0 py-20 bg-black;
+  @apply px-0 py-20;
+  background: transparent;
 }
 .careers-cta-title {
   @apply text-3xl font-bold text-white mb-6 text-center;
@@ -473,7 +535,8 @@ body {
 
 /* Experts Page Styles */
 .experts-hero {
-  @apply px-0 py-20 bg-black mt-12;
+  @apply px-0 py-20 mt-12;
+  background: transparent;
 }
 .experts-container {
   @apply max-w-6xl mx-auto my-0 px-8 py-0;
@@ -485,7 +548,8 @@ body {
   @apply text-4xl font-bold text-white mb-8;
 }
 .experts-list {
-  @apply px-0 py-12 bg-black;
+  @apply px-0 py-12;
+  background: transparent;
 }
 .experts-grid {
   @apply grid grid-cols-1 md:grid-cols-2 gap-8;
@@ -511,3 +575,5 @@ body {
 .experts-cta {
   @apply text-center mt-12;
 }
+
+
