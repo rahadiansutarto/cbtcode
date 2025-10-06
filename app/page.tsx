@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import TestimonialCarousel from "./components/TestimonialCarousel";
 
 export default function Home() {
   return (
@@ -108,33 +109,7 @@ export default function Home() {
       </section>
       {/* Team Section - Testimonials */}
       <section className="testimonials" id="team">
-    <div className="testimonials-container">
-      <div className="testimonials-grid">
-        <div className="testimonial">
-          <p className="testimonial-text">
-            KJ allows our team to focus more on strategy and critical
-            decision-making, while routine tasks are streamlined. It has helped
-            improve efficiency and create space for more high-value, creative
-            work.
-          </p>
-          <div className="testimonial-author">Jessica Lo</div>
-          <div className="testimonial-company">
-            Vice President, Make Up For Ever (LVMH)
-          </div>
-        </div>
-        <div className="testimonial">
-          <p className="testimonial-text">
-            The hard truth is that AI is useless without expert training.
-            Vertical AI agents like Calvinball start with your business context
-            already built in and thats the real shortcut here.
-          </p>
-          <div className="testimonial-author">Vikrant Shinde</div>
-          <div className="testimonial-company">
-            Director, Home Care Unilever
-          </div>
-        </div>
-      </div>
-    </div>
+        <TestimonialCarousel />
       </section>
       {/* Experts Section - Calvinballer Hubs */}
       <section className="hubs" id="experts">
