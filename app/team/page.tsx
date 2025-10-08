@@ -1,5 +1,51 @@
+'use client';
+
+import { useEffect, useState, useRef } from 'react';
 
 export default function Team() {
+  const totalCodes = 10;
+  const cardWidth = 350 + 32; // Card width + gap
+  const [scrollPosition, setScrollPosition] = useState(cardWidth * totalCodes); // Start at second set
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setScrollPosition((prev) => prev + cardWidth);
+    }, 2000); // Slide every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [cardWidth]);
+
+  useEffect(() => {
+    // When we've scrolled past the second set, instantly reset to the second set
+    if (scrollPosition >= cardWidth * totalCodes * 2) {
+      if (trackRef.current) {
+        trackRef.current.style.transition = 'none';
+      }
+      setTimeout(() => {
+        setScrollPosition(cardWidth * totalCodes);
+        setTimeout(() => {
+          if (trackRef.current) {
+            trackRef.current.style.transition = 'transform 0.5s ease-in-out';
+          }
+        }, 50);
+      }, 10);
+    }
+  }, [scrollPosition, cardWidth, totalCodes]);
+
+  const codeItems = [
+    { title: "Calvinballer Code 1", description: "Strive for euphoria" },
+    { title: "Calvinballer Code 2", description: "Take ownership: individually and collectively" },
+    { title: "Calvinballer Code 3", description: "Be resilient and persistent" },
+    { title: "Calvinballer Code 4", description: "Embrace the power of imagination" },
+    { title: "Calvinballer Code 5", description: "Be brave and not fearless. Do what is right and not what is easy" },
+    { title: "Calvinballer Code 6", description: "Constant innovation" },
+    { title: "Calvinballer Code 7", description: "Enjoy the journey and not the destination" },
+    { title: "Calvinballer Code 8", description: "Have trust: focus on your own grass, the color is not important" },
+    { title: "Calvinballer Code 9", description: "Work smart, always find time to do nothing" },
+    { title: "Calvinballer Code 10", description: "Collaborate with compassion" }
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -19,107 +65,47 @@ export default function Team() {
       <section className="calvinballer-code">
         <div className="code-container">
           <div className="code-marquee" aria-label="Calvinballer Code">
-            <div className="code-track">
-              <div className="code-item">
-                <h3>Calvinballer Code 1</h3>
-                <p>Strive for euphoria</p>
-              </div>
-              
-              <div className="code-item">
-                <h3>Calvinballer Code 2</h3>
-                <p>Take ownership: individually and collectively</p>
-              </div>
-              
-              <div className="code-item">
-                <h3>Calvinballer Code 3</h3>
-                <p>Be resilient and persistent</p>
-              </div>
-              
-              <div className="code-item">
-                <h3>Calvinballer Code 4</h3>
-                <p>Embrace the power of imagination</p>
-              </div>
-              
-              <div className="code-item">
-                <h3>Calvinballer Code 5</h3>
-                <p>Be brave and not fearless. Do what is right and not what is easy</p>
-              </div>
-              
-              <div className="code-item">
-                <h3>Calvinballer Code 6</h3>
-                <p>Constant innovation</p>
-              </div>
-              
-              <div className="code-item">
-                <h3>Calvinballer Code 7</h3>
-                <p>Enjoy the journey and not the destination</p>
-              </div>
-              
-              <div className="code-item">
-                <h3>Calvinballer Code 8</h3>
-                <p>Have trust: focus on your own grass, the color is not important</p>
-              </div>
-              
-              <div className="code-item">
-                <h3>Calvinballer Code 9</h3>
-                <p>Work smart, always find time to do nothing</p>
-              </div>
-              
-              <div className="code-item">
-                <h3>Calvinballer Code 10</h3>
-                <p>Collaborate with compassion</p>
-              </div>
-              
-              {/* duplicate for seamless loop */}
-              <div className="code-item" aria-hidden>
-                <h3>Calvinballer Code 1</h3>
-                <p>Strive for euphoria</p>
-              </div>
-              
-              <div className="code-item" aria-hidden>
-                <h3>Calvinballer Code 2</h3>
-                <p>Take ownership: individually and collectively</p>
-              </div>
-              
-              <div className="code-item" aria-hidden>
-                <h3>Calvinballer Code 3</h3>
-                <p>Be resilient and persistent</p>
-              </div>
-              
-              <div className="code-item" aria-hidden>
-                <h3>Calvinballer Code 4</h3>
-                <p>Embrace the power of imagination</p>
-              </div>
-              
-              <div className="code-item" aria-hidden>
-                <h3>Calvinballer Code 5</h3>
-                <p>Be brave and not fearless. Do what is right and not what is easy</p>
-              </div>
-              
-              <div className="code-item" aria-hidden>
-                <h3>Calvinballer Code 6</h3>
-                <p>Constant innovation</p>
-              </div>
-              
-              <div className="code-item" aria-hidden>
-                <h3>Calvinballer Code 7</h3>
-                <p>Enjoy the journey and not the destination</p>
-              </div>
-              
-              <div className="code-item" aria-hidden>
-                <h3>Calvinballer Code 8</h3>
-                <p>Have trust: focus on your own grass, the color is not important</p>
-              </div>
-              
-              <div className="code-item" aria-hidden>
-                <h3>Calvinballer Code 9</h3>
-                <p>Work smart, always find time to do nothing</p>
-              </div>
-              
-              <div className="code-item" aria-hidden>
-                <h3>Calvinballer Code 10</h3>
-                <p>Collaborate with compassion</p>
-              </div>
+            <div 
+              ref={trackRef}
+              className="code-track"
+              style={{
+                transform: `translateX(-${scrollPosition}px)`,
+                transition: 'transform 0.5s ease-in-out',
+                paddingLeft: 'calc(50% - 175px)'
+              }}
+            >
+              {/* Render multiple sets for seamless infinite scrolling */}
+              {[...Array(3)].map((_, setIndex) => 
+                codeItems.map((item, itemIndex) => {
+                  // Calculate which card should be highlighted (centered)
+                  const currentCard = Math.floor(scrollPosition / cardWidth);
+                  const absoluteIndex = setIndex * totalCodes + itemIndex;
+                  const isHighlighted = absoluteIndex === currentCard;
+                  
+                  return (
+                    <div 
+                      key={`set-${setIndex}-item-${itemIndex}`}
+                      className="code-item"
+                      style={{
+                        border: isHighlighted 
+                          ? '2px solid rgba(255, 255, 255, 0.8)' 
+                          : '2px solid rgba(255, 255, 255, 0.2)',
+                        background: isHighlighted
+                          ? 'linear-gradient(320.69deg, rgba(255, 68, 35, 0.5) 3.87%, rgba(191, 59, 186, 0.5) 44.94%, rgba(89, 17, 160, 0.5) 87.26%)'
+                          : 'rgba(0, 0, 0, 0.3)',
+                        boxShadow: isHighlighted
+                          ? '4px 4px 8px rgba(255, 255, 255, 0.1) inset, -4px -4px 8px rgba(255, 255, 255, 0.1) inset'
+                          : 'none',
+                        backdropFilter: 'blur(10px)',
+                        WebkitBackdropFilter: 'blur(10px)'
+                      }}
+                    >
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                    </div>
+                  );
+                })
+              )}
             </div>
           </div>
         </div>

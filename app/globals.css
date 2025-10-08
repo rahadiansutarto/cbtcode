@@ -216,7 +216,7 @@ body::before {
   @apply ml-4;
 }
 .testimonial {
-  @apply p-8 rounded-2xl border border-gray-700/50 bg-gray-900/20 backdrop-blur-sm transition-all duration-500;
+  @apply p-8 rounded-2xl border border-gray-700/50 bg-gray-900/20 backdrop-blur-sm transition-all duration-500 hover:bg-gray-900/30;
   max-width: 700px;
   width: 100%;
 }
@@ -443,6 +443,7 @@ body::before {
 .use-case-video-container {
   @apply flex-shrink-0;
   width: 500px;
+  
 }
 
 .use-case-video {
@@ -479,18 +480,29 @@ body::before {
 }
 .code-track {
   @apply flex gap-8 items-center;
-  animation: marquee 60s linear infinite;
   display: flex;
   width: max-content;
 }
 .code-item {
-  @apply p-8 rounded-2xl border border-gray-800 bg-gray-900 flex-shrink-0 min-w-[300px];
+  @apply p-8 rounded-2xl flex-shrink-0;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  box-sizing: border-box;
 }
 .code-item h3 {
   @apply text-xl font-semibold text-white mb-4;
+  text-align: center;
 }
 .code-item p {
   @apply text-gray-300 leading-relaxed text-white;
+  text-align: center;
+  max-width: 280px;
 }
 
 .team-members {
@@ -595,7 +607,8 @@ body::before {
   @apply grid grid-cols-1 md:grid-cols-2 gap-8;
 }
 .expert-card {
-  @apply p-8 rounded-2xl border border-gray-800 bg-gray-900;
+  @apply p-8 rounded-2xl border border-gray-800 bg-gray-900 backdrop-blur-sm hover:bg-gray-900/30;
+  background-color: rgba(0, 0, 0, .5);
 }
 .expert-name {
   @apply text-2xl font-semibold text-white mb-3;
