@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 
 interface TeamMember {
   name: string;
@@ -169,7 +170,7 @@ export default function Team() {
             {teamMembers.map((member, index) => (
               <div key={index} className="team-member">
                 <div className="member-image">
-                  <img src={member.image} alt={member.name} />
+                  <Image src={member.image} alt={member.name} width={256} height={256} />
                 </div>
                 <h3>{member.name}</h3>
                 <h4>{member.title}</h4>
@@ -187,7 +188,7 @@ export default function Team() {
             <button className="modal-close" onClick={() => setSelectedMember(null)}>&times;</button>
             
             <div className="team-modal-image">
-              <img src={selectedMember.image} alt={selectedMember.name} />
+              <Image src={selectedMember.image} alt={selectedMember.name} width={256} height={256} />
             </div>
             
             <div className="team-modal-content">
@@ -204,12 +205,12 @@ export default function Team() {
               <div className="team-modal-socials">
                 {selectedMember.email && (
                   <a href={`mailto:${selectedMember.email}`} className="social-icon mail-icon">
-                    <img src="/mail.svg" alt="Email" />
+                    <Image src="/mail.svg" alt="Email" width={32} height={32} />
                   </a>
                 )}
                 {selectedMember.linkedin && (
                   <a href={selectedMember.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon linkedin-icon">
-                    <img src="/linkedin.svg" alt="LinkedIn" />
+                    <Image src="/linkedin.svg" alt="LinkedIn" width={32} height={32} />
                   </a>
                 )}
               </div>

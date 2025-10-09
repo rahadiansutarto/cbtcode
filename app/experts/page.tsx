@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 interface Expert {
@@ -87,7 +88,7 @@ export default function Experts() {
             {experts.map((expert, index) => (
               <article key={index} className="expert-card">
                 <div className="expert-image-container">
-                  <img src={expert.image} alt={expert.name} className="expert-image" />
+                  <Image src={expert.image} alt={expert.name} className="expert-image" width={128} height={128} />
                 </div>
                 <h3 className="expert-name">{expert.name}</h3>
                 <p className="expert-quote">&ldquo;{expert.shortQuote}&rdquo; <span className="read-more" onClick={() => setSelectedExpert(expert)}>Read more</span></p>
@@ -115,7 +116,7 @@ export default function Experts() {
             <button className="modal-close" onClick={() => setSelectedExpert(null)}>&times;</button>
             
             <div className="team-modal-image">
-              <img src={selectedExpert.image} alt={selectedExpert.name} />
+              <Image src={selectedExpert.image} alt={selectedExpert.name} width={256} height={256} />
             </div>
             
             <div className="team-modal-content">
@@ -132,12 +133,12 @@ export default function Experts() {
               <div className="team-modal-socials">
                 {selectedExpert.email && (
                   <a href={`mailto:${selectedExpert.email}`} className="social-icon mail-icon">
-                    <img src="/mail.svg" alt="Email" />
+                    <Image src="/mail.svg" alt="Email" width={32} height={32} />
                   </a>
                 )}
                 {selectedExpert.linkedin && (
                   <a href={selectedExpert.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon linkedin-icon">
-                    <img src="/linkedin.svg" alt="LinkedIn" />
+                    <Image src="/linkedin.svg" alt="LinkedIn" width={32} height={32} />
                   </a>
                 )}
               </div>
