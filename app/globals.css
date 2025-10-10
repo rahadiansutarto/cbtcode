@@ -112,7 +112,18 @@ body::before {
   @apply text-6xl font-bold text-white mb-8 leading-tight;
 }
 .hero-subtitle {
-  @apply text-6xl font-bold text-white max-w-4xl mb-8 mx-auto leading-tight;
+  @apply text-6xl font-bold max-w-4xl mb-8 mx-auto leading-tight;
+  background-image: linear-gradient(318.49deg, #414141 3.74%, #fff 47.05%, #9f9f9f 91.68%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-subtitle2 {
+  @apply text-6xl font-bold max-w-4xl mb-8 mx-auto leading-tight;
+  background-image: linear-gradient(318.49deg, #414141 3.74%, #fff 47.05%, #9f9f9f 91.68%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero-description {
   @apply text-xl text-white max-w-4xl mb-6 mx-auto leading-relaxed;
@@ -324,9 +335,21 @@ body::before {
   }
   .hero h1 {
     @apply text-xl;
+    background-image: linear-gradient(318.49deg, #414141 3.74%, #fff 47.05%, #9f9f9f 91.68%);
   }
   .hero-subtitle {
     @apply text-4xl;
+    background-image: linear-gradient(318.49deg, #414141 3.74%, #fff 47.05%, #9f9f9f 91.68%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-subtitle2 {
+    @apply text-4xl;
+    background-image: linear-gradient(318.49deg, #414141 3.74%, #fff 47.05%, #9f9f9f 91.68%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   .carousel-arrow {
     @apply text-2xl;
