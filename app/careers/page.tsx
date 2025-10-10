@@ -63,22 +63,43 @@ export default function CareersPage() {
               {jobs.map((job) => (
                 <div key={job.id} className="career-card">
                   <h3 className="career-title">{job.title}</h3>
-                  <p className="career-description">{job.description}</p>
+                  <p className="career-description">
+                    {job.description.length > 150 
+                      ? `${job.description.substring(0, 150)}...` 
+                      : job.description}
+                    {" "}
+                    <Link href={`/careers/${job.id}`} className="career-read-more">
+                      Read more
+                    </Link>
+                  </p>
                   <div className="career-meta">
-                    <span className="career-type">{job.type}</span>
-                    <span className="career-experience">{job.experience}</span>
+                    <span className="career-type">
+                      <svg className="inline-block w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" strokeWidth="2"/>
+                      </svg>
+                      {job.type}
+                    </span>
+                    <span className="career-experience">
+                      <svg className="inline-block w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeWidth="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6" strokeWidth="2"/>
+                        <line x1="8" y1="2" x2="8" y2="6" strokeWidth="2"/>
+                        <line x1="3" y1="10" x2="21" y2="10" strokeWidth="2"/>
+                      </svg>
+                      {job.experience}
+                    </span>
                   </div>
-                  <Link href={`/careers/${job.id}`} className="career-read-more">
-                    Read more
-                  </Link>
+                  <button 
+                    className="career-apply-btn" 
+                    onClick={(e) => {
+                      e.preventDefault(); 
+                      openModal(job.title);
+                    }}
+                  >
+                    Apply for this job
+                  </button>
                 </div>
               ))}
-            </div>
-            <div className="text-center">
-              <button className="hero-cta mt-8" onClick={(e) => {e.preventDefault(); openModal(null);}}> 
-                Apply Now 
-                <span>→</span>
-              </button>
             </div>
           </div>
         </section>
