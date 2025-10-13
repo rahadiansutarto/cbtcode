@@ -644,7 +644,7 @@ body {
 /* Team Member Modal */
 .team-modal {
   @apply relative rounded-2xl overflow-hidden max-w-md w-full;
-  background: linear-gradient(180deg, rgba(60, 30, 90, 0.95) 0%, rgb(170, 45, 187) 100%);
+  background: linear-gradient(180deg, rgba(60, 30, 90, 0.95) 0%, rgba(175, 114, 180, 0.411) 100%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
