@@ -853,7 +853,7 @@ body {
   background: url('/bg3.svg') no-repeat center center;
   background-size: cover;
   position: relative;
-  padding-top: 15rem;
+  padding-top: 13rem;
   padding-bottom: 8rem;
   min-height: 70vh;
   z-index: 2;
