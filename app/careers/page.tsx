@@ -74,13 +74,13 @@ export default function CareersPage() {
                   </p>
                   <div className="career-meta">
                     <span className="career-type">
-                      <svg className="inline-block w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="inline-block w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="10" strokeWidth="2"/>
                       </svg>
                       {job.type}
                     </span>
                     <span className="career-experience">
-                      <svg className="inline-block w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="inline-block w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2" strokeWidth="2"/>
                         <line x1="16" y1="2" x2="16" y2="6" strokeWidth="2"/>
                         <line x1="8" y1="2" x2="8" y2="6" strokeWidth="2"/>

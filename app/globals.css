@@ -747,8 +747,14 @@ body {
 .career-type {
   @apply text-sm font-semibold text-purple-400;
 }
+.career-type svg {
+  @apply mr-2;
+}
 .career-experience {
   @apply text-sm text-gray-400;
+}
+.career-experience svg {
+  @apply mr-2;
 }
 .career-read-more {
   @apply text-purple-400 hover:text-purple-300 transition-colors duration-200;
